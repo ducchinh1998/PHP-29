@@ -6,7 +6,7 @@
   if($_SESSION['cart'][$masp]['soluong']>1 && $type==0){
     $_SESSION['cart'][$masp]['soluong']--;
 
-  }else {
+  }else{
     unset($_SESSION['cart'][$masp]);
   }
   header('Location:cart.php')

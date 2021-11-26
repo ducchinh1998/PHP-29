@@ -2,6 +2,8 @@
   session_start();
   if(isset($_SESSION['cart'])){
     $products=$_SESSION['cart'];
+  }else{
+    $products = array();
   }
   // session_destroy();
    // echo '<pre>';
