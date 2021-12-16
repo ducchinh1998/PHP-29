@@ -1,14 +1,22 @@
 <?php 
 require_once('connection.php');
+require_once('Category.php');
 
-$sql = "SELECT * FROM categories";
+//Dòng 5->12 cách thông thường connection CSDL
+// $sql = "SELECT * FROM categories";
 
-$results =$conn->query($sql);
+// $results =$conn->query($sql);
 
-$categories = array();
-while($row = $results->fetch_assoc()) {
-    $categories[] = $row;
-}
+// $categories = array();
+// while($row = $results->fetch_assoc()) {
+//     $categories[] = $row;
+// }
+
+//Khởi tạo obj category (Theo mô hình MVC)
+$category = new Category();
+$categories = $category->getList();
+// die();
+
 // echo"<pre>";
 //     print_r($categories);
 // echo"</pre>";

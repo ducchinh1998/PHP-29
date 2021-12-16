@@ -10,8 +10,8 @@ $pname = $_FILES['thumbnail']['name'];
     $uploads_dir = 'uploads/';
     move_uploaded_file($tname, $uploads_dir.'/'.$pname);
 
-$sql = "INSERT INTO categories (id,name,parent_id,thumbnail,description,slug) 
-VALUES ('".$data['id']."','".$data['name']."','".$data['parent_id']."', '".$pname."','".$data['description']."','".$data['slug']."')";
+$sql = "INSERT INTO categories (name,parent_id,thumbnail,description,slug) 
+VALUES ('".$data['name']."','".$data['parent_id']."', '".$pname."','".$data['description']."','".$data['slug']."')";
 
 $status =$conn->query($sql);
     header("Location: categories.php");
